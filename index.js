@@ -54,9 +54,9 @@ module.exports = co.wrap(function*(fd) {
   let singer = _.find(info.ID3, ['id', 'TPE1'])
   let title = _.find(info.ID3, ['id', 'TIT2'])
   let album = _.find(info.ID3, ['id', 'TALB'])
-  singer = singer.content
-  title = title.content
-  album = album.content
+  singer = singer && singer.content
+  title = title && title.content
+  album = album && album.content
 
   return {
     singer,
